@@ -1,0 +1,16 @@
+<div class="nested-fields">
+  <div class="row">
+    <div class="col-sm">
+      <div class="form-group">
+        <div class="input-group">
+          <%= f.text_field :phone, class: "form-control", placeholder: "#{Phone.human_attribute_name('phone')}" %>
+          <span class="input-group-btn">
+            <%= link_to_remove_association(f, { class: 'btn btn-danger' } ) do %>
+              <%= icon('trash') %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="row justify-content-left">
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm">
+        <p>
+          <strong><%= Contact.human_attribute_name('name') %></strong>:&nbsp;<%= @contact.name %>
+        </p>
+        <p>
+          <strong><%= Contact.human_attribute_name('email') %></strong>:&nbsp;<%= @contact.email %>
+        </p>
+        <p>
+          <strong><%= Contact.human_attribute_name('kind') %></strong>:&nbsp;<%= @contact.kind.description %>
+        </p>
+        <p>
+          <strong><%= Contact.human_attribute_name('rmk') %></strong>:&nbsp;<%= @contact.rmk %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <fieldset>
+          <legend>Endereço</legend>
+          <p>
+            <strong>
+              <%= Address.human_attribute_name('street') %>
+            </strong>:&nbsp;<%= @contact.address.street %>
+          </p>
+          <p>
+            <strong>
+              <%= Address.human_attribute_name('city') %>
+            </strong>:&nbsp;<%= @contact.address.city %>
+          </p>
+          <p>
+            <strong>
+              <%= Address.human_attribute_name('state') %>
+            </strong>:&nbsp;<%= @contact.address.state %>
+          </p>
+        </fieldset>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <fieldset>
+          <legend>Telefones</legend>
+          <% @contact.phones.each do |p| %>
+          <p><%= p.phone %></p>
+          <% end %>
+        </fieldset>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <%= link_to contacts_path, class: "btn btn-primary" do %>
+          <%= icon('arrow-left') %>
+          Voltar
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

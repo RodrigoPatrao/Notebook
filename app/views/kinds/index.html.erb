@@ -1,0 +1,54 @@
+<div class="row justify-content-left">
+  <div class="col-sm col-lg-6">
+    <div class="row">
+      <div class="col-sm">
+        <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <%= icon('times') %>
+          </button>
+          <%= value %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <table class="table table-sm table-striped">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th><%= Kind.human_attribute_name("description") %></th>
+              <th>
+                <%= link_to new_kind_path, class: "btn btn-info btn-sm", style: 'float: right' do %>
+                  <%= icon('plus', 'Novo Tipo') %>
+                <% end %>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @kinds.each do |kind| %>
+              <tr>
+                <td colspan="2">
+                  <%= kind.description %>
+                  <div class="pull-right">
+                    <%= link_to edit_kind_path(kind), class: "btn btn-warning btn-sm rounded-circle", data: { toggle: "tooltip", placement:"right" }, title: "Editar Tipo" do %>
+                      <%= icon('pencil') %>
+                    <% end %>
+                    <%= link_to kind, method: :delete, data: { toggle: "tooltip", placement:"right", confirm: 'Operação sem retorno! Confirma?' }, class: "btn btn-danger btn-sm rounded-circle", title: "Excluir Tipo" do %>
+                      <%= icon('trash') %>
+                    <% end %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <%= paginate @kinds %>
+      </div>
+    </div>
+  </div>
+</div>

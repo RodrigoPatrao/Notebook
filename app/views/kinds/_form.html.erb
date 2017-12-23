@@ -1,0 +1,37 @@
+<%= form_for(@kind) do |f| %>
+<div class="row">
+  <div class="col-sm">
+    <% if @kind.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kind.errors.count, "error") %> prohibited this kind from being saved:</h2>
+      <ul>
+        <% @kind.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm">
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm">
+    <div class="form-group">
+      <%= button_to @kind, class: "btn btn-success" do %>
+        <%= icon('save', 'Gravar') %>
+      <% end %>
+      <%= link_to kinds_path, class: "btn btn-primary" do %>
+        <%= icon('arrow-left', 'Voltar') %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>

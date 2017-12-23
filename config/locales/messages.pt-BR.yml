@@ -1,0 +1,7 @@
+"pt-BR":
+  messages:
+    errors: 'impediram a gravação do registro:'
+    success:
+      create: Contato criado com sucesso.
+      update: Contato atualizado com sucesso.
+      delete: Contato excluído com sucesso.

@@ -1,0 +1,14 @@
+<nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-lg">
+  <div class="container">
+    <%= link_to 'Agenda', root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Navegação">
+      <%= icon('bars') %>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav">
+        <%= link_to "Tipos", kinds_path, class: "nav-item nav-link" %>
+        <%= link_to "Contatos", contacts_path, class: "nav-item nav-link" %>
+      </div>
+    </div>
+  </div>
+</nav>
