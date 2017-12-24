@@ -54,3 +54,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+group :production do
+  #Pg is the Ruby interface to the {PostgreSQL RDBMS}[http://www.postgresql.org/].
+  gem 'pg'
+end
