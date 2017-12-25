@@ -1,5 +1,5 @@
 <div class="row justify-content-left">
-  <div class="col-sm col-lg">
+  <div class="col-sm col-lg-9">
     <div class="row"><!-- Flash Messages -->
       <div class="col-sm">
         <% flash.each do |key, value| %>
@@ -15,12 +15,12 @@
     <div class="row"><!-- Contacts datagrid -->
       <div class="col-sm col-lg">
         <table class="table table-sm table-striped" >
-          <thead class="bg-primary text-light">
+          <thead class="bg-secondary text-dark">
             <tr>
               <th><%= Contact.human_attribute_name("name") %></th>
               <th><%= Contact.human_attribute_name("kind") %></th>
               <th style="width: 15%">
-                <%= link_to new_contact_path, class: "btn btn-info btn-sm float-right" do %>
+                <%= link_to new_contact_path, class: "btn btn-primary btn-sm float-right" do %>
                   <%= icon('user', 'Novo Contato') %>
                 <% end %>
               </th>
@@ -33,10 +33,10 @@
               <td><%= contact.kind.description %></td>
               <td>
                 <div class="float-right">
-                  <%= link_to contact, class: "btn btn-primary btn-sm rounded-circle", data: {toggle: "tooltip", placement: "right"}, title:"Dados do Contato" do %>
+                  <%= link_to contact, class: "btn btn-info btn-sm rounded-circle", data: {toggle: "tooltip", placement: "right"}, title:"Dados do Contato" do %>
                     <%= icon('address-book') %>
                   <% end %>
-                  <%= link_to edit_contact_path(contact), class: "btn btn-orange-400 btn-sm rounded-circle", data: {toggle: "tooltip", placement: "right"}, title:"Editar Contato" do %>
+                  <%= link_to edit_contact_path(contact), class: "btn btn-warning btn-sm rounded-circle", data: {toggle: "tooltip", placement: "right"}, title:"Editar Contato" do %>
                     <%= icon('pencil') %>
                   <% end %>
                   <%= link_to contact, method: :delete, data: { toggle: "tooltip", placement: "right", confirm: 'Operação sem retorno! Confirma?' }, class: "btn btn-danger btn-sm rounded-circle", title:"Excluir Contato" do %>
