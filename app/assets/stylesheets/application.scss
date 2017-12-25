@@ -10,8 +10,12 @@
 * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
 * file per style scope.
 */
-@import "functions";
-@import "custom";
+$pagination-color: #343a40;
+$pagination-border-color: #343a40;
+$pagination-active-bg: #343a40;
+$pagination-active-border-color: #343a40;
+$pagination-hover-bg: #dee2e6;
+$pagination-hover-color: #343a40;
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
